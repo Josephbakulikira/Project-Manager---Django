@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block body_block %}
+<div class="jumbotron">
+  <h2>Update Task</h2>
+
+  <form action='' method="POST">
+    {% csrf_token %}
+    {{form.name}}
+
+    <p>{{form.details}}</p>
+    <p>Done: {{form.done}}</p>
+
+    <h4>Details</h4>
+    <hr class="my-4">
+    {{task.details}}
+    <hr class="my-4">
+    
+    <input class='btn btn-primary' type="submit"  value="Edit">
+  </form>
+</div>
+{% endblock %}
